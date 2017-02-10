@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Sitio de mantenimiento</title>
+
+    <!-- Bootstrap -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/extranet-login-alt.css" media="screen" charset="utf-8">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="bg-gray">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="img/header_extranet.png" class="extranet img-responsive">
+          </a>
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <div class="bg-white">
+      <div class="container">
+        <div class="row table-item message">
+          <div class="col-xs-7">
+            <div>
+              <h1 class="navy">Bienvenido a la Extranet alternativa de OSDE</h1>
+              <h1 class="cyan">Este es un acceso temporal <br>mientras restablecemos la Extranet</h1>
+            </div>
+          </div>
+          <div class="col-xs-5">
+            <div class="message-img"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row table-item login">
+        <div class="col-xs-4">
+          <form class="bg-navy" id="alt-login">
+            <h3>Inicie Sesión</h3>
+            <div class="form-group">
+              <label for="inputUser">CUIT o Nombre de Usuario</label>
+              <input type="text" class="form-control" id="inputUser">
+            </div>
+            <div class="form-group">
+              <label for="inputPassword">Contraseña</label>
+              <input type="password" class="form-control" id="inputPassword">
+            </div>
+            <div class="row">
+              <div class="col-xs-6 pull-left">
+                <button type="submit" class="btn btn-default btn-alt">Olvidé mi contraseña</button>
+                <button type="submit" class="btn btn-default btn-alt">Obtener mi contraseña</button>
+              </div>
+              <div class="col-xs-6 pull-right">
+                <!-- <button class="btn btn-default" id="ingresar" type="button" data-toggle="modal" data-target="#myModal">INGRESAR</button> -->
+                <button class="btn btn-default" id="ingresar" type="button">INGRESAR</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="shadow-top extranet">
+      <div class="table-item">
+        <ul>
+          <li class="osde">
+            <a href="http://www.osdebinario.com.ar/"></a>
+          </li>
+          <li class="binaria">
+            <a href="http://www.osdebinario.com.ar/"></a>
+          </li>
+          <li class="interturis">
+            <a href="https://www.interturis.com.ar/"></a>
+          </li>
+          <li class="urg">
+            <a href="http://www.urg.com.ar/"></a>
+          </li>
+          <li class="fundacion">
+            <a href="http://www.fundacionosde.com.ar/"></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+            <h4 class="modal-title">Log In</h4>
+          </div>
+          <div class="modal-body">
+            <p>Ha habido un problema con su identificación!</p>
+            <ul class="list-unstyled">
+              <li>- Verifique que ha ingresado correctamente su CUIT o Nombre de Usuario.</li>
+              <li>- Verifique que ha ingresado correctamente su contraseña.</li>
+            </ul>
+            <p>Recuerde que:</p>
+            <ul class="list-unstyled">
+              <li>- Si usted es titular de cuenta debe ingresar con su CUIT.</li>
+              <li>- si usted fue habilitado por un titular de cuenta debe ingresar con el Nombre de Usuario asignado.
+            Si el problema persiste por favor comuníquese con nuestro Centro de Atención Telefónica a Prestadores al 0810-666-6733(OSDE).</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Aceptar</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        var user = $('#inputUser');
+        var pass = $('#inputPassword');
+        var check = $('#ingresar');
+      $(document).ready(function(){
+        check.bind('click',function(){
+          console.log(user.val(),pass.val());
+          if (user.val() !== '' & pass.val() !== '') {
+            console.log(user,pass);
+            $('#myModal').modal('show');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
