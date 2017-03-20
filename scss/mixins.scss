@@ -1,0 +1,44 @@
+@import 'variables';
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+@mixin gradient($color1, $color2) {
+  background: -moz-linear-gradient(left, $color1 0%, $color2 100%);
+  background: -webkit-gradient(linear, right left, left bottom, color-stop(0%,$color1), color-stop(100%,$color2));
+  background: -webkit-linear-gradient(left, $color1 0%,$color2 100%);
+  background: -o-linear-gradient(left, $color1 0%,$color2 100%);
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin background($imgpath,$position:center,$position:center,$repeat: no-repeat,$size:contain) {
+  background: {
+    image: url($imgpath);
+    position-x: $position;
+    position-x: $position;
+    repeat: $repeat;
+    size: $size;
+  }
+}
+
+@mixin border-input($color){
+  border : {
+    top : $color;
+    right: $color;
+    left: $color;
+  }
+}

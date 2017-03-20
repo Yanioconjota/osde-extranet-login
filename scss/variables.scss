@@ -1,0 +1,50 @@
+/*
+Fonts
+*/
+
+$thin:'museosans-100';
+$regular:'museosans-300';
+$bold:'museosans-500';
+
+
+/*
+Colors
+*/
+$gray: lighten( black, 80% );
+$ltgray: lighten( black, 90% );
+$dkgray: lighten( black, 55% );
+$white:#FFF;
+$ltwhite: rgba( $white, .15 );
+$transparent:transparent;
+$navy: #054281;
+$cyan: #55C7E7;
+
+/*
+Sizes
+*/
+
+$lg:100%;
+$md:75%;
+$sm:50%;
+$xs:25%;
+
+$unit: 1em;
+
+/*
+Logos & Images
+*/
+
+$oldSprite:         '../img/btn_close.png';
+$osde:              '../img/osde_binario_off.gif';
+$osdeHover:         '../img/osde_binario_on.gif';
+$binaria:           '../img/binaria_off.gif';
+$binariaHover:      '../img/binaria_on.gif';
+$interturis:        '../img/interturis_off.gif';
+$interturisHover:   '../img/interturis_on.gif';
+$urgencias:         '../img/urgencias_off.gif';
+$urgenciasHover:    '../img/urgencias_on.gif';
+$fundacion:         '../img/fundacion_off.gif';
+$fundacionHover:    '../img/fundacion_on.gif';
+$close:             '../img/btn_close.png';
+$shadowTop:         '../img/fondo_pie.gif';
+$messageImg:        'https://extranet.osde.com.ar/OSDEExtranet/jsp/multiempresas/osde/img/slider/02.jpg';
