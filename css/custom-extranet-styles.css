@@ -52,6 +52,9 @@ Logos & Images
   font-weight: normal;
   src: url("../fonts/museosans-500.eot");
   src: url("../fonts/museosans-500.eot?") format("eot"), url("../fonts/museosans-500.woff") format("woff"), url("../fonts/museosans-500.ttf") format("truetype"), url("../fonts/museosans-500.svg#museosans-300") format("svg"); }
+html, body {
+  height: 100%; }
+
 body {
   font-family: "museosans-300";
   letter-spacing: .25px;
@@ -60,17 +63,24 @@ body {
 button {
   border-radius: 0 !important; }
 
+.left-block, .login, .footer {
+  display: block;
+  float: left; }
+
+.fixed-height, .login > [class*="col-"] {
+  min-height: 250px;
+  height: 250px; }
+
 .table-item {
   display: table;
   width: 100%;
   height: 100%;
   margin: 0 auto; }
+  .table-item [class*="col-"] {
+    float: none; }
   .table-item > * {
     display: table-cell;
     vertical-align: middle; }
-
-.table-item [class*="col-"] {
-  float: none; }
 
 .message, .message-img {
   height: 15em; }
@@ -81,57 +91,58 @@ button {
     width: 100%;
     background-image: url("https://extranet.osde.com.ar/OSDEExtranet/jsp/multiempresas/osde/img/slider/02.jpg");
     background-position-x: no-repeat;
-    background-position-x: no-repeat;
+    background-position-y: no-repeat;
     background-repeat: cover;
     background-size: contain; }
 
 .bg-white {
-  background-color: white; }
+  background-color: #FFF; }
 
 .bg-gray {
   background-color: #f0f0f0; }
 
-.bg-navy {
+.bg-teal {
   background-color: #016280; }
 
 .btn-primary {
   background-color: #00548E !important; }
 
-.row.table-item.login {
-  height: 30em; }
-
-.login form {
-  margin-top: 2em;
-  padding: 3em 3em 5em;
-  color: #fff;
-  -webkit-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
-  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.8); }
-  .login form input, .login form button {
-    border-radius: 0;
-    height: 25px; }
-  .login form h3 {
-    font-size: 20px;
-    padding-top: 0; }
-  .login form label {
-    color: #b9baa2; }
-.login button {
-  float: right;
-  line-height: 11px; }
-.login button.btn.btn-default {
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  background-image: url("../img/bg_button_right.png");
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: right;
-  height: 1.5em; }
-.login button.btn.btn-alt {
-  color: #01ACDC;
-  background-image: url("../img/bg_button_right_blue.png");
-  background-position-x: left;
-  float: left; }
+.login {
+  width: 100%;
+  height: auto; }
+  .login .form {
+    -webkit-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.8); }
+  .login form {
+    padding: 0.5em 2em 2em 0;
+    color: #fff; }
+    .login form input, .login form button {
+      border-radius: 0;
+      height: 25px; }
+    .login form h3 {
+      font-size: 20px;
+      padding-top: 0;
+      margin-top: 5px; }
+    .login form label {
+      color: #b9baa2; }
+  .login button {
+    float: right;
+    line-height: 11px; }
+  .login button.btn.btn-default {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    background-image: url("../img/bg_button_right.png");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: right;
+    height: 1.5em; }
+  .login button.btn.btn-alt {
+    color: #01ACDC;
+    background-image: url("../img/bg_button_right_blue.png");
+    background-position-x: left;
+    float: left; }
 
 .modal-content {
   border-radius: 0; }
@@ -144,7 +155,7 @@ button {
       width: 20px;
       background-image: url("../img/btn_close.png");
       background-position-x: no-repeat;
-      background-position-x: no-repeat;
+      background-position-y: no-repeat;
       background-repeat: 0;
       background-size: contain;
       background-image: url("../img/btn_close.png");
@@ -196,14 +207,13 @@ h1 {
   color: #55C7E7; }
 
 .footer {
-  background-image: url("../img/fondo_pie.gif");
+  background-image: url("../img/fondo_pie.png");
   background-position-x: center;
-  background-position-x: center;
+  background-position-y: center;
   background-repeat: repeat-x;
   background-size: contain;
   background-color: #FFF;
   padding: 3em 0;
-  display: block;
   width: 100%; }
   .footer p, .footer a {
     font-size: 9px;
@@ -247,61 +257,61 @@ h1 {
     .footer ul li.osde a {
       background-image: url("../img/osde_binario_off.gif");
       background-position-x: center;
-      background-position-x: center;
+      background-position-y: center;
       background-repeat: no-repeat;
       background-size: contain; }
       .footer ul li.osde a:hover {
         background-image: url("../img/osde_binario_on.gif");
         background-position-x: center;
-        background-position-x: center;
+        background-position-y: center;
         background-repeat: no-repeat;
         background-size: contain; }
     .footer ul li.binaria a {
       background-image: url("../img/binaria_off.gif");
       background-position-x: center;
-      background-position-x: center;
+      background-position-y: center;
       background-repeat: no-repeat;
       background-size: contain; }
       .footer ul li.binaria a:hover {
         background-image: url("../img/binaria_on.gif");
         background-position-x: center;
-        background-position-x: center;
+        background-position-y: center;
         background-repeat: no-repeat;
         background-size: contain; }
     .footer ul li.interturis a {
       background-image: url("../img/interturis_off.gif");
       background-position-x: center;
-      background-position-x: center;
+      background-position-y: center;
       background-repeat: no-repeat;
       background-size: contain; }
       .footer ul li.interturis a:hover {
         background-image: url("../img/interturis_on.gif");
         background-position-x: center;
-        background-position-x: center;
+        background-position-y: center;
         background-repeat: no-repeat;
         background-size: contain; }
     .footer ul li.urg a {
       background-image: url("../img/urgencias_off.gif");
       background-position-x: center;
-      background-position-x: center;
+      background-position-y: center;
       background-repeat: no-repeat;
       background-size: contain; }
       .footer ul li.urg a:hover {
         background-image: url("../img/urgencias_on.gif");
         background-position-x: center;
-        background-position-x: center;
+        background-position-y: center;
         background-repeat: no-repeat;
         background-size: contain; }
     .footer ul li.fundacion a {
       background-image: url("../img/fundacion_off.gif");
       background-position-x: center;
-      background-position-x: center;
+      background-position-y: center;
       background-repeat: no-repeat;
       background-size: contain; }
       .footer ul li.fundacion a:hover {
         background-image: url("../img/fundacion_on.gif");
         background-position-x: center;
-        background-position-x: center;
+        background-position-y: center;
         background-repeat: no-repeat;
         background-size: contain; }
 
@@ -314,5 +324,42 @@ h1 {
   -webkit-box-shadow: -1px 1px 12px rgba(0, 0, 0, 0.8);
   -moz-box-shadow: -1px 1px 12px rgba(0, 0, 0, 0.8);
   box-shadow: -1px 1px 12px rgba(0, 0, 0, 0.8); }
+
+/*Slider*/
+.carousel-fade .carousel-inner .item {
+  height: 265px;
+  transition-property: opacity; }
+  .carousel-fade .carousel-inner .item img {
+    position: absolute;
+    right: 0; }
+  .carousel-fade .carousel-inner .item span {
+    text-align: right;
+    position: absolute;
+    top: 28%;
+    left: 8%; }
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  opacity: 0; }
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1; }
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  transform: translate3d(0, 0, 0); }
+.carousel-fade .carousel-control {
+  z-index: 2; }
+
+.carousel .carousel-indicators {
+  left: 8%; }
+  .carousel .carousel-indicators li {
+    background-color: #808080;
+    border: none; }
+  .carousel .carousel-indicators li.active {
+    background-color: #0C90B6; }
 
 /*# sourceMappingURL=custom-extranet-styles.css.map */
