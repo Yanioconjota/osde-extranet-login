@@ -5,16 +5,20 @@ Fonts
 $thin:    'museosans-100';
 $regular: 'museosans-300';
 $bold:    'museosans-500';
+$rounded: 'GothamRounded-Bold';
 
 
 /*
 Colors
 */
 $gray:        #f0f0f0;
+$ltgray:      #f6f6f6;
+$dkgray:      #dbdbdb;
 $white:       #FFF;
 $navy:        #054281;
 $cyan:        #55C7E7;
 $teal:        #016280;
+$primary:     #08A6CE;
 $transparent: transparent;
 
 /*
@@ -44,5 +48,8 @@ $urgenciasHover:    '../img/urgencias_on.gif';
 $fundacion:         '../img/fundacion_off.gif';
 $fundacionHover:    '../img/fundacion_on.gif';
 $close:             '../img/btn_close.png';
+$arrowWhite:        '../img/bg_button_right.png';
+$arrowBlue:         '../img/bg_button_right_blue.png';
+$arrowGray:         '../img/bg_button_right_gray.png';
 $shadowTop:         '../img/fondo_pie.png';
 $messageImg:        'https://extranet.osde.com.ar/OSDEExtranet/jsp/multiempresas/osde/img/slider/02.jpg';

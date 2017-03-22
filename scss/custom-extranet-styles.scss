@@ -12,19 +12,97 @@ body {
   font-size: 13px;
 }
 
+a {
+  text-decoration: underline;
+  color: $cyan;
+}
+
+
 button {
   border-radius: 0 !important;
 }
 
-.left-block {
+.block,
+.left-block
+.right-block {
   display: block;
+}
+
+.left-block {
   float: left;
+}
+
+.right-block {
+  float: right;
 }
 
 .fixed-height {
   min-height: 250px;
   height: 250px;
 }
+
+.margin-reset {
+  margin: 0;
+}
+
+.padding-reset {
+  padding: 0;
+}
+
+.icon {
+  @include border-radius(50%);
+  padding: .25em .75em;
+  text-align:center;
+  background-color:#D2D2D2;
+  font-size: 3em;
+  font-family: $bold;
+  color: $white;
+}
+
+.message-container {
+  h1 {
+    @extend .cyan;
+    @extend .margin-reset;
+    font-size: $unit*2;
+  }
+}
+
+.btn {
+  line-height: 11px;
+  border: none;
+  color: $white;
+  height: 1.5em;
+}
+.btn-default {
+  @extend .btn;
+  @extend .bg-teal;
+  @include background($arrowWhite,right,center,no-repeat,initial);
+  &:hover {
+    @extend .bg-teal;
+    color: $white;
+  }
+}
+.btn-alt {
+  @extend .btn;
+  color: $cyan;
+  @include background($arrowBlue,left,center,no-repeat,initial);
+  &:hover {
+    @extend .bg-teal;
+    color: $cyan;
+  }
+}
+
+.btn-primary {
+  @extend .btn;
+  @extend .bg-primary;
+  padding-right: 11%;
+  @include background($arrowWhite,94%,center,no-repeat,initial);
+  &:hover {
+    @extend .bg-primary;
+    color: $white;
+  }
+}
+
 
 .table-item {
   [class*="col-"] {
@@ -40,45 +118,49 @@ button {
  }
 }
 
-
-.message,.message-img {
-  height: 15em;
-}
-
-.message {
-  text-align: right;
-  .message-img {
-    width: 100%;
-    @include background($messageImg,center,no-repeat,cover);
-  }
-}
-
-
 .bg-white {
   background-color: $white;
 }
 .bg-gray {
   background-color: $gray;
 }
+.bg-ltgray {
+  background-color: $ltgray;
+}
 .bg-teal {
   background-color: $teal;
 }
-
-.btn-primary {
-  background-color: #00548E !important;
+.bg-primary {
+  background-color: $primary;
 }
 
-
 .login {
+  .form-container{
+    @extend .bg-teal;
+    @include box-shadow(0, 1px, 12px,rgba(0,0,0,0.8));
+    z-index: 2;
+  }
+  @extend .message-container;
+  .message-container {
+    @extend .bg-gray;
+    div {
+      text-align: center;
+      span {
+        @extend .icon;
+        font-family: $rounded;
+      }
+      p {
+        text-align: left;
+      }
+    }
+  }
   > [class*="col-"] {
     @extend .fixed-height;
+    margin-bottom: $unit;
   }
   width: 100%;
   height: auto;
   @extend .left-block;
-  .form {
-    @include box-shadow(0, 1px, 12px,rgba(0,0,0,0.8));
-  }
   form {
     padding: 0.5em 2em 2em 0;
     color: #fff;
@@ -97,25 +179,32 @@ button {
   }
   button {
     float: right;
-    line-height: 11px;
   }
-  button.btn.btn-default {
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    background-image: url('../img/bg_button_right.png');
-    background-repeat: no-repeat;
-    background-position-y: center;
-    background-position-x: right;
-    height: 1.5em;
-  }
-  button.btn.btn-alt {
-    color: #01ACDC;
-    background-image: url('../img/bg_button_right_blue.png');
-    background-position-x: left;
+  button.btn-default.btn-alt {
     float: left;
   }
 }
+
+.consulta {
+  @extend .margin-reset;
+  p {
+    font-size: 12px;
+    @extend .margin-reset;
+  }
+}
+
+.user {
+  text-transform: uppercase;
+  button {
+    @extend .btn;
+    @extend .btn-primary;
+    padding: 6px 21px 6px 10px;
+    text-transform: uppercase;
+    margin: .25em 0;
+  }
+}
+
+
 
 .modal-content {
   border-radius:0;
@@ -126,7 +215,7 @@ button {
       margin-top:2px;
       height: 18.5px;
       width: 20px;
-      @include background($close,center,no-repeat, 0, contain);
+      @include background($close,center,no-repeat, 0, cover);
       background-image: url($oldSprite);
       opacity:1;
     }
@@ -138,24 +227,22 @@ button {
 }
 
 .navbar {
+  height: 6%;
   border-radius: 0;
   margin-bottom: 0;
   z-index: 1040;
   a {
     img {
-      margin-top: -7px
+      margin-top: -7px;
     }
     img.extranet {
-      margin-top: -13px
+      margin-top: -13px;
     }
   }
 }
 
 .navbar-default {
   @include box-shadow(1px, 1px, 12px,rgba(0,0,0,0.8));
-  // -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0,0.45);
-  // -moz-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0,0.45);
-  // box-shadow: 0px 3px 5px -1px rgba(0, 0, 0,0.45);
 }
 
 .navbar-inverse {
@@ -176,12 +263,9 @@ button {
   }
 }
 
-h1 {
+h1,h2 {
     font-family: $regular;
-    font-size: 25px;
-    margin: 0;
     font-weight: normal;
-    line-height: 25px;
 }
 
 .navy {color: $navy;}
@@ -189,7 +273,7 @@ h1 {
 
 .footer {
   @extend .left-block;
-  @include background($shadowTop,center,center,repeat-x,contain);
+  @include background($shadowTop,center,$unit,repeat-x,initial);
   background-color: $white;
   padding: 3em 0;
   width: 100%;
@@ -284,15 +368,9 @@ h1 {
 }
 .shadow-top {
   @include box-shadow(0, 1px, 12px,rgba(0,0,0,0.8));
-  // -webkit-box-shadow: 0px -3px 5px -1px rgba(0, 0, 0,0.45);
-  // -moz-box-shadow: 0px -3px 5px -1px rgba(0, 0, 0,0.45);
-  // box-shadow: 0px -3px 5px -1px rgba(0, 0, 0,0.45);
 }
 .shadow-bottom {
   @include box-shadow(-1px, 1px, 12px,rgba(0,0,0,0.8));
-  // -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0,0.45);
-  // -moz-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0,0.45);
-  // box-shadow: 0px 3px 5px -1px rgba(0, 0, 0,0.45);
 }
 
 
@@ -303,6 +381,17 @@ h1 {
 .carousel-fade {
   .carousel-inner {
     .item {
+      h1,h2 {
+        font-size: 30px;
+        @extend .margin-reset;
+        line-height: 30px;
+      }
+      h1 {
+        @extend .navy;
+      }
+      h2 {
+        @extend .cyan;
+      }
       height: 265px;
       transition-property: opacity;
       img {
@@ -351,6 +440,41 @@ h1 {
     }
     li.active {
       background-color: #0C90B6;
+    }
+  }
+}
+
+.well {
+  background: $transparent;
+  border: none;
+  height: 94%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  .row {
+    height: 100%;
+    .message-container {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      .message {
+        margin-top: 10%;
+        height: 90%;
+        @extend .bg-ltgray;
+        @include box-shadow(0, 1px, 12px,rgba(0,0,0,0.8));
+        border-top: $unit/2 solid $teal;
+        div.list-container {
+          border: 1px solid $dkgray;
+          height: 100%;
+          padding: $unit*3;
+          a {
+            color: inherit;
+            text-decoration: none;
+            @extend .btn;
+            @include background($arrowGray,left,initial,no-repeat,initial);
+            padding-left: 1em;
+          }
+        }
+      }
     }
   }
 }

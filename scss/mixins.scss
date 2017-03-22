@@ -1,5 +1,11 @@
 @import 'variables';
 
+@mixin rotate($deg){
+  -ms-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   border-radius: $radius;
@@ -25,11 +31,11 @@
   }
 }
 
-@mixin background($imgpath,$position:center,$position:center,$repeat: no-repeat,$size:contain) {
+@mixin background($imgpath,$position-x:center,$position-y:center,$repeat: no-repeat,$size:contain) {
   background: {
     image: url($imgpath);
-    position-x: $position;
-    position-y: $position;
+    position-x: $position-x;
+    position-y: $position-y;
     repeat: $repeat;
     size: $size;
   }

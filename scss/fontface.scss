@@ -1,6 +1,6 @@
 @import 'variables';
 
-@each $font-face in $thin, $regular, $bold {
+@each $font-face in $thin, $regular, $bold, $rounded {
   @font-face {
     font-family: $font-face; font-style: normal; font-weight: normal;
     src: url('../fonts/#{$font-face}.eot');

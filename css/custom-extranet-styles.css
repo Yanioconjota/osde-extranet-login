@@ -52,6 +52,12 @@ Logos & Images
   font-weight: normal;
   src: url("../fonts/museosans-500.eot");
   src: url("../fonts/museosans-500.eot?") format("eot"), url("../fonts/museosans-500.woff") format("woff"), url("../fonts/museosans-500.ttf") format("truetype"), url("../fonts/museosans-500.svg#museosans-300") format("svg"); }
+@font-face {
+  font-family: "GothamRounded-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/GothamRounded-Bold.eot");
+  src: url("../fonts/GothamRounded-Bold.eot?") format("eot"), url("../fonts/GothamRounded-Bold.woff") format("woff"), url("../fonts/GothamRounded-Bold.ttf") format("truetype"), url("../fonts/GothamRounded-Bold.svg#museosans-300") format("svg"); }
 html, body {
   height: 100%; }
 
@@ -60,16 +66,87 @@ body {
   letter-spacing: .25px;
   font-size: 13px; }
 
+a {
+  text-decoration: underline;
+  color: #55C7E7; }
+
 button {
   border-radius: 0 !important; }
 
+.block,
+.left-block
+.right-block,
+.login
+.right-block,
+.footer
+.right-block {
+  display: block; }
+
 .left-block, .login, .footer {
-  display: block;
   float: left; }
+
+.right-block {
+  float: right; }
 
 .fixed-height, .login > [class*="col-"] {
   min-height: 250px;
   height: 250px; }
+
+.margin-reset, .message-container h1, .login h1, .consulta, .consulta p, .carousel-fade .carousel-inner .item h1, .carousel-fade .carousel-inner .item h2 {
+  margin: 0; }
+
+.padding-reset {
+  padding: 0; }
+
+.icon, .login .message-container div span, .login .login div span {
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  padding: .25em .75em;
+  text-align: center;
+  background-color: #D2D2D2;
+  font-size: 3em;
+  font-family: "museosans-500";
+  color: #FFF; }
+
+.message-container h1, .login h1 {
+  font-size: 2em; }
+
+.btn, .btn-default, .btn-alt, .btn-primary, .user button, .well .row .message-container .message div.list-container a, .well .row .login .message div.list-container a {
+  line-height: 11px;
+  border: none;
+  color: #FFF;
+  height: 1.5em; }
+
+.btn-default {
+  background-image: url("../img/bg_button_right.png");
+  background-position-x: right;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: initial; }
+  .btn-default:hover {
+    color: #FFF; }
+
+.btn-alt {
+  color: #55C7E7;
+  background-image: url("../img/bg_button_right_blue.png");
+  background-position-x: left;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: initial; }
+  .btn-alt:hover {
+    color: #55C7E7; }
+
+.btn-primary, .user button {
+  padding-right: 11%;
+  background-image: url("../img/bg_button_right.png");
+  background-position-x: 94%;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: initial; }
+  .btn-primary:hover, .user button:hover {
+    color: #FFF; }
 
 .table-item {
   display: table;
@@ -82,38 +159,37 @@ button {
     display: table-cell;
     vertical-align: middle; }
 
-.message, .message-img {
-  height: 15em; }
-
-.message {
-  text-align: right; }
-  .message .message-img {
-    width: 100%;
-    background-image: url("https://extranet.osde.com.ar/OSDEExtranet/jsp/multiempresas/osde/img/slider/02.jpg");
-    background-position-x: no-repeat;
-    background-position-y: no-repeat;
-    background-repeat: cover;
-    background-size: contain; }
-
 .bg-white {
   background-color: #FFF; }
 
-.bg-gray {
+.bg-gray, .login .message-container, .login .login {
   background-color: #f0f0f0; }
 
-.bg-teal {
+.bg-ltgray, .well .row .message-container .message, .well .row .login .message {
+  background-color: #f6f6f6; }
+
+.bg-teal, .btn-default, .btn-default:hover, .btn-alt:hover, .login .form-container {
   background-color: #016280; }
 
-.btn-primary {
-  background-color: #00548E !important; }
+.bg-primary, .btn-primary, .user button, .btn-primary:hover, .user button:hover {
+  background-color: #08A6CE; }
 
 .login {
   width: 100%;
   height: auto; }
-  .login .form {
+  .login .form-container {
     -webkit-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
     -moz-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.8); }
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+    z-index: 2; }
+  .login .message-container div, .login .login div {
+    text-align: center; }
+    .login .message-container div span, .login .login div span {
+      font-family: "GothamRounded-Bold"; }
+    .login .message-container div p, .login .login div p {
+      text-align: left; }
+  .login > [class*="col-"] {
+    margin-bottom: 1em; }
   .login form {
     padding: 0.5em 2em 2em 0;
     color: #fff; }
@@ -127,22 +203,19 @@ button {
     .login form label {
       color: #b9baa2; }
   .login button {
-    float: right;
-    line-height: 11px; }
-  .login button.btn.btn-default {
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    background-image: url("../img/bg_button_right.png");
-    background-repeat: no-repeat;
-    background-position-y: center;
-    background-position-x: right;
-    height: 1.5em; }
-  .login button.btn.btn-alt {
-    color: #01ACDC;
-    background-image: url("../img/bg_button_right_blue.png");
-    background-position-x: left;
+    float: right; }
+  .login button.btn-default.btn-alt {
     float: left; }
+
+.consulta p {
+  font-size: 12px; }
+
+.user {
+  text-transform: uppercase; }
+  .user button {
+    padding: 6px 21px 6px 10px;
+    text-transform: uppercase;
+    margin: .25em 0; }
 
 .modal-content {
   border-radius: 0; }
@@ -154,10 +227,10 @@ button {
       height: 18.5px;
       width: 20px;
       background-image: url("../img/btn_close.png");
-      background-position-x: no-repeat;
+      background-position-x: center;
       background-position-y: no-repeat;
       background-repeat: 0;
-      background-size: contain;
+      background-size: cover;
       background-image: url("../img/btn_close.png");
       opacity: 1; }
     .modal-content .modal-header:hover {
@@ -165,6 +238,7 @@ button {
       opacity: 1; }
 
 .navbar {
+  height: 6%;
   border-radius: 0;
   margin-bottom: 0;
   z-index: 1040; }
@@ -193,25 +267,22 @@ button {
       font-size: 12px;
       padding: 3px 1.3%; }
 
-h1 {
+h1, h2 {
   font-family: "museosans-300";
-  font-size: 25px;
-  margin: 0;
-  font-weight: normal;
-  line-height: 25px; }
+  font-weight: normal; }
 
-.navy {
+.navy, .carousel-fade .carousel-inner .item h1 {
   color: #054281; }
 
-.cyan {
+.cyan, .message-container h1, .login h1, .carousel-fade .carousel-inner .item h2 {
   color: #55C7E7; }
 
 .footer {
   background-image: url("../img/fondo_pie.png");
   background-position-x: center;
-  background-position-y: center;
+  background-position-y: 1em;
   background-repeat: repeat-x;
-  background-size: contain;
+  background-size: initial;
   background-color: #FFF;
   padding: 3em 0;
   width: 100%; }
@@ -329,6 +400,9 @@ h1 {
 .carousel-fade .carousel-inner .item {
   height: 265px;
   transition-property: opacity; }
+  .carousel-fade .carousel-inner .item h1, .carousel-fade .carousel-inner .item h2 {
+    font-size: 30px;
+    line-height: 30px; }
   .carousel-fade .carousel-inner .item img {
     position: absolute;
     right: 0; }
@@ -361,5 +435,38 @@ h1 {
     border: none; }
   .carousel .carousel-indicators li.active {
     background-color: #0C90B6; }
+
+.well {
+  background: transparent;
+  border: none;
+  height: 94%;
+  margin-bottom: 0;
+  padding-bottom: 0; }
+  .well .row {
+    height: 100%; }
+    .well .row .message-container, .well .row .login {
+      height: 100%;
+      position: relative;
+      overflow: hidden; }
+      .well .row .message-container .message, .well .row .login .message {
+        margin-top: 10%;
+        height: 90%;
+        -webkit-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+        -moz-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+        border-top: 0.5em solid #016280; }
+        .well .row .message-container .message div.list-container, .well .row .login .message div.list-container {
+          border: 1px solid #dbdbdb;
+          height: 100%;
+          padding: 3em; }
+          .well .row .message-container .message div.list-container a, .well .row .login .message div.list-container a {
+            color: inherit;
+            text-decoration: none;
+            background-image: url("../img/bg_button_right_gray.png");
+            background-position-x: left;
+            background-position-y: initial;
+            background-repeat: no-repeat;
+            background-size: initial;
+            padding-left: 1em; }
 
 /*# sourceMappingURL=custom-extranet-styles.css.map */
